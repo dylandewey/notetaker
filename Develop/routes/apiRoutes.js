@@ -38,7 +38,7 @@ module.exports = function (app) {
         });
 
         function updateDb() {
-            fs.writeFile("db/db.json",JSON.stringify(notes,'\t'), function(err) {
+            fs.writeFile('db/db.json',JSON.stringify(notes,'\t'), function(err) {
                 if (err) throw err;
                 return true;
             });
