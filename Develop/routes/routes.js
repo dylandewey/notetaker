@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = function (app) {
 
-    fs.readFile('db/db.json', function (err, data) {
+    fs.readFile('Develop/db/db.json', function (err, data) {
         if (err) throw err;
         let notes = JSON.parse(data);
 
@@ -38,7 +38,7 @@ module.exports = function (app) {
         });
 
         function updateDb() {
-            fs.writeFile('db/db.json',JSON.stringify(notes,'\t'), function(err) {
+            fs.writeFile('Develop/db/db.json',JSON.stringify(notes,'\t'), function(err) {
                 if (err) throw err;
                 return true;
             });
