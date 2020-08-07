@@ -1,20 +1,22 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 
 
 // creating an 'express' server
 const app = express();
 
 //Initial PORT
-const PORT = 7500;
+const PORT = process.env.PORT || 7500;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(_dirname));
 
 //Routes File
-require('./routs/apiRoutes')(app);
-require('./routes/htmlRoutes')(app);
+require('/routes/apiRoutes')(app);
+require('/routes/htmlRoutes')(app);
 
 //Starts the server
 app.listen(PORT, function () {
