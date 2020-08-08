@@ -1,4 +1,3 @@
-const express = require('express').Router();
 const fs = require('fs');
 const path = require('path');
 
@@ -16,11 +15,12 @@ module.exports = function (app) {
             let newNote = req.body;
             notes.push(newNote);
             updateDb();
-            return console.log('Added new note: "+newNote.title');
+            return console.log('Added new note: ' + newNote.title);
         });
 
         app.get('/api/notes/:id', function (req, res) {
             res.json(notes[req.params.id]);
+            return console.log('Retrieved note: ' + newNote.title);
         });
 
         app.delete('/api/notes/:id', function (req, res) {
