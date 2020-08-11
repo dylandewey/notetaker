@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 //Routes File
-require('./Develop/routes/routes')(app);
+require('./routes/routes')(app);
 
 //Starts the server
 app.listen(PORT, function () {
